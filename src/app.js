@@ -42,7 +42,7 @@ const runApp = data => {
                 let found=data;
                 if(args.name)
                     //found = data.filter(elem => elem.name.slice(0,(args.name.lenght)+1) === args.name);
-                    found = data.filter(elem => elem.name === args.name);
+                    found = data.filter(elem => elem.name.includes(args.name||elem.name));
                 if(args.gender)
                     found = data.filter(elem => elem.gender === args.gender);
                 found = found.slice((page-1)*number, ((page-1)*number)+(number));
